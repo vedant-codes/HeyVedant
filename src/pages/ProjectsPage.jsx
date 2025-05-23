@@ -3,12 +3,12 @@ import ProjectCard from "../components/ProjectCard"
 const ProjectsPage = () => {
   const projects = [
     {
-      id: "oh-ja-cafe",
-      title: "OH, JA! CAFÉ",
-      tags: ["BRAND", "ILLUSTRATION"],
+      id: "SQL",
+      title: "SQuerreL",
+      tags: ["react", "Ai/ml"],
       clientMessage:
-        "Hey! We're two designers opening a small cafe and love your illustrations. They'd fit perfectly with our vibe!",
-      replyMessage: "I'm in—let's make your cafe shine!",
+        "Hey! We struggle with writing queries—your tool could save us tons of time!",
+      replyMessage: "Say no more! Let’s turn plain English into powerful SQL!",
       imageUrl: "/SQL2.png",
       additionalImages: [
         
@@ -20,18 +20,17 @@ const ProjectsPage = () => {
       websiteUrl: "https://oh-ja-cafe.com",
     },
     {
-      id: "oh-ja-cafe",
-      title: "OH, JA! CAFÉ",
-      tags: ["BRAND", "ILLUSTRATION"],
+      id: "B4C",
+      title: "BOOK4COEP",
+      tags: ["WEB DEVELOPMENT", "DESIGN"],
       clientMessage:
-        "Hey! We're two designers",
-      replyMessage: "I'm in—let's make your cafe shine!",
-      imageUrl: "/SQL2.png",
-      additionalImages: [
-        
-              "/SQL2.png?height=600&width=300",
-              "/SQL3.png",
-              "/SQL.png"
+        "Hey! We’re two librarians—your tool could really streamline our library!",
+      replyMessage: "I’m in! Let’s make managing books a breeze!",
+      imageUrl: "/b4c1.png",
+            additionalImages: [
+              "/b4c.png",
+              "/b4c3.png",
+              "/b4c1.png"
             ],
       githubUrl: "https://github.com/vedant/oh-ja-cafe",
       websiteUrl: "https://oh-ja-cafe.com",
@@ -68,21 +67,22 @@ const ProjectsPage = () => {
     <div className="page-content container mx-auto px-4 py-6 md:py-10">
       <h1 className="section-heading">ALL PROJECTS</h1>
       <div className="max-w-7xl mx-auto">
-        {projects.map((project, index) => (
-          <ProjectCard
-            key={project.id}
-            id={project.id}
-            title={project.title}
-            tags={project.tags}
-            clientMessage={project.clientMessage}
-            replyMessage={project.replyMessage}
-            imageUrl={project.imageUrl}
-            additionalImages={project.additionalImages}
-            githubUrl={project.githubUrl}
-            websiteUrl={project.websiteUrl}
-            reverse={index % 2 === 1}
-          />
-        ))}
+       {projects.map((project, index) => (
+  <ProjectCard
+    key={project.id}
+    id={project.id}
+    title={project.title}
+    tags={project.tags}
+    clientMessage={project.clientMessage}
+    replyMessage={project.replyMessage}
+    imageUrl={project.imageUrl}
+    additionalImages={project.additionalImages}
+    githubUrl={project.githubUrl}
+    websiteUrl={project.websiteUrl}
+    reverse={index >= 2 && index % 2 === 1} // ❗️ Reverse starts from the 3rd item
+  />
+))}
+
       </div>
     </div>
   )
