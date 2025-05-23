@@ -12,21 +12,33 @@ const SmoothScroll = ({ children }) => {
     let currentY = 0
     let targetY = 0
     let rafId = null
-
     const smoothFactor = 0.1
+
+    const setBodyHeight = () => {
+      if (!container) return
+      // Always set body height to container height so scroll works
+      document.body.style.height = `${container.getBoundingClientRect().height}px`
+    }
 
     const smoothScroll = () => {
       targetY = window.scrollY
+      const maxScroll = container.scrollHeight - window.innerHeight
+
+      // Clamp targetY to maxScroll (prevent overscroll)
+      targetY = Math.min(targetY, maxScroll)
+
+      // Smoothly approach targetY
       currentY += (targetY - currentY) * smoothFactor
+
+      // Clamp currentY to maxScroll for safety
+      currentY = Math.min(currentY, maxScroll)
 
       container.style.transform = `translateY(-${currentY}px)`
 
-      rafId = requestAnimationFrame(smoothScroll)
-    }
+      // Update body height every frame in case content changes dynamically
+      setBodyHeight()
 
-    // Set body height to container height to allow scrolling
-    const setBodyHeight = () => {
-      document.body.style.height = `${container.getBoundingClientRect().height}px`
+      rafId = requestAnimationFrame(smoothScroll)
     }
 
     setBodyHeight()
