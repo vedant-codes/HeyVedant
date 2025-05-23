@@ -2,7 +2,6 @@
 
 import { useState } from "react"
 import { Link } from "react-router-dom"
-import ProjectImageOverlay from "./ProjectImageOverlay"
 
 const ProjectCard = ({
   id,
@@ -11,100 +10,148 @@ const ProjectCard = ({
   clientMessage,
   replyMessage,
   imageUrl,
-  additionalImages,
+  additionalImages = [],
   githubUrl,
   websiteUrl,
+  reverse = false,
 }) => {
-  const [isImageExpanded, setIsImageExpanded] = useState(false)
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [isHovering, setIsHovering] = useState(false)
 
-  const handleImageClick = (e) => {
-    e.preventDefault()
-    setIsImageExpanded(true)
+  const allImages = [imageUrl, ...additionalImages].filter(Boolean)
+
+  const nextImage = () => {
+    setCurrentImageIndex((prev) => (prev + 1) % allImages.length)
+  }
+
+  const prevImage = () => {
+    setCurrentImageIndex((prev) => (prev - 1 + allImages.length) % allImages.length)
+  }
+
+  const handleImageHover = () => {
+    setIsHovering(true)
+  }
+
+  const handleImageLeave = () => {
+    setIsHovering(false)
   }
 
   return (
-    <div className="project-card mb-10">
-      <div className="p-4 md:p-6">
-        <div className="flex flex-col">
+    <div className="project-card">
+      <div className={`project-layout ${reverse ? "reverse" : ""}`}>
+        {/* Project Info */}
+        <div className="project-info">
           <div className="flex flex-wrap gap-2 mb-4">
             {tags.map((tag) => (
-              <span key={tag} className="px-2 md:px-3 py-1 bg-gray-800 rounded-full text-xs md:text-sm uppercase">
+              <span key={tag} className="px-3 py-1 bg-gray-700 rounded-full text-sm uppercase font-medium">
                 {tag}
               </span>
             ))}
           </div>
 
-          <div className="flex items-center gap-2 md:gap-4 mb-4 md:mb-6">
-            <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-purple-300 text-black flex items-center justify-center font-bold text-sm md:text-base">
+          <div className="flex items-center gap-4 mb-6">
+            <div className="w-12 h-12 rounded-full bg-purple-400 text-black flex items-center justify-center font-bold text-lg">
               {title.charAt(0)}
             </div>
-            <h3 className="text-xl md:text-3xl font-bold uppercase">{title}</h3>
+            <h3 className="text-3xl font-bold uppercase">{title}</h3>
           </div>
 
           {clientMessage && (
-            <div className="bg-white text-black rounded-xl p-3 md:p-4 mb-3 md:mb-4 max-w-[90%] self-start">
-              <p className="text-sm md:text-base">{clientMessage}</p>
+            <div className="speech-bubble mb-4">
+              <p>{clientMessage}</p>
             </div>
           )}
 
           {replyMessage && (
-            <div className="self-end">
-              <div className="inline-block bg-white text-black rounded-full px-3 md:px-4 py-1 md:py-2 text-xs md:text-sm mb-4 md:mb-6">
-                {replyMessage}
-              </div>
+            <div className="text-right mb-6">
+              <div className="question-bubble">{replyMessage}</div>
             </div>
           )}
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 mb-4 md:mb-6">
-            <div
-              className="bg-gray-200 rounded-xl aspect-video flex items-center justify-center cursor-pointer overflow-hidden project-image-container"
-              onClick={handleImageClick}
-            >
-              <img
-                src={imageUrl || "/placeholder.svg"}
-                alt={title}
-                className="rounded-xl w-full h-full object-cover transition-transform hover:scale-105"
-              />
-            </div>
-            {additionalImages && additionalImages.length > 0 && (
-              <div
-                className="bg-purple-300 rounded-xl aspect-video flex items-center justify-center cursor-pointer overflow-hidden project-image-container"
-                onClick={handleImageClick}
-              >
-                <img
-                  src={additionalImages[0] || "/placeholder.svg"}
-                  alt={`${title} additional`}
-                  className="rounded-xl w-full h-full object-cover transition-transform hover:scale-105"
-                />
+          <div className="flex gap-4 mt-8">
+            <div className="bg-white text-black rounded-full px-4 py-2 text-sm font-medium">Like what you see?</div>
+            <Link to={`/projects/${id}`} className="bg-white text-black rounded-full px-4 py-2 text-sm font-medium">
+              Let's chat!
+            </Link>
+          </div>
+        </div>
+
+        {/* Project Images */}
+        <div className="project-images" onMouseEnter={handleImageHover} onMouseLeave={handleImageLeave}>
+          {/* Main Image */}
+          <div className="project-main-image">
+            <img
+              src={allImages[currentImageIndex] || "/placeholder.svg?height=400&width=600"}
+              alt={`${title} - Main`}
+              onClick={nextImage}
+              style={{ cursor: allImages.length > 1 ? "pointer" : "default" }}
+            />
+
+            {/* Hover Overlay with Links */}
+            {isHovering && (
+              <div className="project-links">
+                <a
+                  href={githubUrl || "https://github.com"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="project-link-icon"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  </svg>
+                </a>
+                <a href={websiteUrl || "#"} target="_blank" rel="noopener noreferrer" className="project-link-icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                  </svg>
+                </a>
               </div>
             )}
           </div>
 
-          <div className="flex justify-center mt-4">
-            <div className="flex flex-wrap gap-2 md:gap-4 justify-center">
-              <div className="bg-white text-black rounded-full px-3 md:px-4 py-1 md:py-2 text-xs md:text-sm">
-                Like what you see?
-              </div>
-              <Link
-                to={`/projects/${id}`}
-                className="bg-white text-black rounded-full px-3 md:px-4 py-1 md:py-2 text-xs md:text-sm"
-              >
-                Let's chat!
-              </Link>
+          {/* Secondary Images */}
+          {additionalImages.length > 0 && (
+            <div className="project-secondary-images">
+              {additionalImages.slice(0, 3).map((img, index) => (
+                <div key={index} className="project-secondary-image" onClick={() => setCurrentImageIndex(index + 1)}>
+                  <img src={img || "/placeholder.svg"} alt={`${title} - ${index + 1}`} />
+                </div>
+              ))}
             </div>
-          </div>
+          )}
+
+          {/* Mobile Mockup (for mobile/app projects) */}
+          {id.includes("mobile") || id.includes("app") ? (
+            <div className="project-mobile-mockup">
+              <div className="project-mobile-screen">
+                <img src={imageUrl || "/placeholder.svg?height=400&width=200"} alt={`${title} - Mobile`} />
+              </div>
+            </div>
+          ) : null}
         </div>
       </div>
-
-      {isImageExpanded && (
-        <ProjectImageOverlay
-          imageUrl={imageUrl}
-          title={title}
-          onClose={() => setIsImageExpanded(false)}
-          githubUrl={githubUrl || "https://github.com"}
-          websiteUrl={websiteUrl || "#"}
-        />
-      )}
     </div>
   )
 }

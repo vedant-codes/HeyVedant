@@ -1,10 +1,17 @@
+"use client"
+
 import { Link } from "react-router-dom"
 
-
-
 const AboutPage = () => {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    })
+  }
+
   return (
-    <div className="container mx-auto px-4 py-6 md:py-10">
+    <div className="page-content container mx-auto px-4 py-6 md:py-10">
       <h1 className="section-heading">NICE TO MEET YOU!</h1>
 
       <div className="max-w-3xl mx-auto">
@@ -25,40 +32,40 @@ const AboutPage = () => {
         </div>
 
         <div className="speech-bubble">
-          In 2016, during an internship, I worked with mentors who showed me the true potential of software development.
-          They helped me realize that great code isn't just about how things look...
+          It clicked for me the first time I solved a real-world problem with code. I had written a small script to automate a repetitive task—and watching it run felt incredibly empowering.
         </div>
 
         <div className="speech-bubble ml-auto mr-0 max-w-xl">
-          It's about creating meaningful experiences that resonate with people.
+          From there, every bug I fixed, every feature I built, reinforced that this was the kind of work I wanted to do every day.
         </div>
 
         <div className="question-bubble mb-4 mt-8 self-start">What do you do now?</div>
 
         <div className="speech-bubble">
-          Today, I embrace my role as a Software Developer, bringing a unique perspective to my work. I aim to create
-          applications that not only meet but exceed expectations, connecting with audiences and making a positive
-          impact.
+          I'm currently pursuing my degree in Computer Science, where I’m building a solid foundation in algorithms, data structures, and system design. Outside of academics, I work on personal and collaborative projects to sharpen my skills—ranging from web apps to data-driven tools
+        </div>
+
+        <div className="speech-bubble">
+          I'm also actively exploring open-source contributions and internships to grow professionally.
         </div>
 
         <div className="question-bubble mb-4 mt-8 self-start">What's your development process like?</div>
 
         <div className="speech-bubble">
-          Curiosity and collaboration are key for me. I believe the best ideas come from exploring new possibilities and
-          pushing boundaries with others. Together, we can create something truly special that inspires and leaves a
-          lasting impression.
+          My process begins with clearly understanding the problem—whether it’s a project requirement or a bug report. I break it down, plan the solution, and build iteratively, constantly testing and refining. I like using Git for version control, and I believe in writing clean, well-documented code that others (and future me) can easily understand.
         </div>
 
         <div className="question-bubble mb-4 mt-8 self-start">How can people reach you?</div>
 
         <div className="speech-bubble">
-          If you're interested in my services or share my values and passion, feel free to contact me.
+          Feel free to reach out to me at <a href="mailto:vedantshinde.vs12@gmail.com" className="text-blue-400 underline">vedantshinde.vs12@gmail.com</a> or connect with me on LinkedIn. I'm always open to internships, collaborations, or just a chat about tech and ideas.
         </div>
 
         <div className="flex justify-center mt-10">
           <Link
             to="/contact"
-            className="bg-red-400 text-white rounded-full px-4 md:px-6 py-2 md:py-3 flex items-center justify-center gap-2 hover:bg-red-500 transition-colors text-sm md:text-base"
+            onClick={scrollToTop}
+            className="bg-red-400 text-white rounded-full px-4 md:px-6 py-2 md:py-3 flex items-center justify-center gap-2 hover:bg-white hover:text-red-400 border-2 border-transparent hover:border-red-400 transition-all duration-300 text-sm md:text-base"
           >
             Start a conversation with me!
           </Link>
@@ -70,16 +77,16 @@ const AboutPage = () => {
 
         <div className="max-w-3xl mx-auto text-center">
           <p className="mb-2">
-            Software Developer at{" "}
-            <Link to="#" className="text-blue-400">
-              Omada
-            </Link>
+            Sophomore Engineer at{" "}
+            <a href="https://www.coeptech.ac.in/" target="_blank" rel="noopener noreferrer" className="text-blue-400 underline">
+              COEP
+            </a>
           </p>
           <p className="mb-2">
-            Founding Developer at{" "}
-            <Link to="#" className="text-emerald-400">
-              Vortex
-            </Link>
+            Technical Coordinator at{" "}
+            <a href="https://www.mind-spark.org/" target="_blank" rel="noopener noreferrer" className="text-emerald-400 underline">
+              Mindspark
+            </a>
           </p>
           <p className="mb-2">Freelance Developer</p>
         </div>
@@ -93,36 +100,31 @@ const AboutPage = () => {
 
         <h2 className="section-heading mt-10 md:mt-20">SOCIALS</h2>
 
-        <div className="max-w-3xl mx-auto text-center">
-          <p className="mb-2">Instagram</p>
-          <p className="mb-2">Twitter (X)</p>
-          <p className="mb-2">Twitch</p>
-        </div>
+        <div className="text-center flex flex-col md:flex-row md:justify-center md:gap-6 gap-2">
+          <a
+            href="https://www.instagram.com/_ve_dantt._/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 flex items-center justify-center gap-1 hover:text-white"
+          >
+            INSTAGRAM ↗
+          </a>
 
-        <h2 className="section-heading mt-10 md:mt-20">SELECTED CLIENTS</h2>
+          <a
+            href="https://x.com/vedantshinde343"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 flex items-center justify-center gap-1 hover:text-white"
+          >
+            TWITTER (X) ↗
+          </a>
 
-        <div className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
-          <div>
-            <p className="mb-2">Aircall</p>
-            <p className="mb-2">Contournement</p>
-            <p className="mb-2">Komando</p>
-            <p className="mb-2">Luni</p>
-            <p className="mb-2">Pepper Clip</p>
-          </div>
-          <div>
-            <p className="mb-2">Auth0</p>
-            <p className="mb-2">Fernande</p>
-            <p className="mb-2">Lattice</p>
-            <p className="mb-2">Oh, Ja!</p>
-            <p className="mb-2">Pepette</p>
-          </div>
-          <div>
-            <p className="mb-2">Castorama</p>
-            <p className="mb-2">Fimeb</p>
-            <p className="mb-2">Les Others</p>
-            <p className="mb-2">PayFit</p>
-            <p className="mb-2">Pyxo</p>
-          </div>
+          <a
+            href="mailto:vedantshinde.vs12@gmail.com"
+            className="text-gray-400 flex items-center justify-center gap-1 hover:text-white"
+          >
+            MAIL ↗
+          </a>
         </div>
       </div>
     </div>

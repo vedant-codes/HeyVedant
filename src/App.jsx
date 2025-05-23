@@ -20,7 +20,10 @@ const PageTransition = ({ children }) => {
 
   useEffect(() => {
     // Scroll to top when navigating to a new page
-    window.scrollTo(0, 0)
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    })
   }, [location.pathname])
 
   return (

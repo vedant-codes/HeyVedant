@@ -7,38 +7,44 @@ const ScrollArrow = ({ targetId }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsVisible(window.scrollY <= 100)
+      if (window.scrollY > 100) {
+        setIsVisible(false)
+      } else {
+        setIsVisible(true)
+      }
     }
 
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  const scrollToTarget = () => {
+  const scrollToTarget = (e) => {
+    e.preventDefault()
     const target = document.getElementById(targetId)
     if (target) {
-      target.scrollIntoView({ behavior: "smooth" })
+      const offsetTop = target.offsetTop
+      window.scrollTo({
+        top: offsetTop,
+        behavior: "smooth",
+      })
     }
   }
 
   if (!isVisible) return null
 
   return (
-    <div
-      className="flex justify-center my-6 md:my-8 cursor-pointer animate-bounce"
-      onClick={scrollToTarget}
-    >
+    <div className="flex justify-center my-6 md:my-8 cursor-pointer animate-bounce-slow" onClick={scrollToTarget}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
+        width="32"
+        height="32"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
-        className="md:w-8 md:h-8"
+        className="text-white"
       >
         <polyline points="6 9 12 15 18 9"></polyline>
       </svg>

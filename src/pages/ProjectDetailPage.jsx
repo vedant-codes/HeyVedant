@@ -34,7 +34,7 @@ const ProjectDetailPage = () => {
 
   if (!project) {
     return (
-      <div className="container mx-auto px-4 py-10 md:py-20 text-center">
+      <div className="page-content container mx-auto px-4 py-10 md:py-20 text-center">
         <h1 className="text-2xl md:text-4xl font-bold mb-4 md:mb-6">Project Not Found</h1>
         <p className="mb-6 md:mb-8">The project you're looking for doesn't exist or has been removed.</p>
         <Link to="/projects" className="button-primary text-sm md:text-base">
@@ -60,7 +60,7 @@ const ProjectDetailPage = () => {
   }
 
   return (
-    <div className="container mx-auto px-4 py-6 md:py-10">
+    <div className="page-content container mx-auto px-4 py-6 md:py-10">
       <Link
         to="/projects"
         className="inline-flex items-center text-gray-400 hover:text-white mb-4 md:mb-8 text-sm md:text-base"
