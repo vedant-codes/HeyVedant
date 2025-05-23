@@ -3,72 +3,58 @@
 import { useEffect, useRef } from "react"
 
 const SmoothScroll = ({ children }) => {
-  const scrollRef = useRef(null)
+  const containerRef = useRef(null)
 
   useEffect(() => {
     if (typeof window === "undefined") return
 
-    // Variables for smooth scrolling
-    let currentY = window.scrollY
-    let targetY = window.scrollY
+    const container = containerRef.current
+    let currentY = 0
+    let targetY = 0
     let rafId = null
 
-    // Coefficient for smooth scrolling (lower = smoother)
-    const smoothFactor = 0.9
+    const smoothFactor = 0.1
 
-    // Function to update scroll position with momentum
     const smoothScroll = () => {
-      // Calculate the difference between current and target position
-      const diff = targetY - currentY
+      targetY = window.scrollY
+      currentY += (targetY - currentY) * smoothFactor
 
-      // If the difference is very small, just set to target
-      if (Math.abs(diff) < 0.1) {
-        currentY = targetY
-      } else {
-        // Apply easing for smooth momentum effect
-        currentY += diff * smoothFactor
-      }
+      container.style.transform = `translateY(-${currentY}px)`
 
-      // Apply the scroll position
-      window.scrollTo(0, currentY)
-
-      // Continue animation
       rafId = requestAnimationFrame(smoothScroll)
     }
 
-    // Start the smooth scroll animation
+    // Set body height to container height to allow scrolling
+    const setBodyHeight = () => {
+      document.body.style.height = `${container.getBoundingClientRect().height}px`
+    }
+
+    setBodyHeight()
+    window.addEventListener("resize", setBodyHeight)
+
     rafId = requestAnimationFrame(smoothScroll)
 
-    // Event listener for scroll events
-    const handleScroll = () => {
-      // Update target position when user scrolls
-      targetY = window.scrollY
-    }
-
-    // Event listener for wheel events to update target position
-    const handleWheel = (e) => {
-      // Update target position based on wheel delta
-      targetY += e.deltaY
-
-      // Clamp target position to valid scroll range
-      targetY = Math.max(0, Math.min(targetY, document.body.scrollHeight - window.innerHeight))
-    }
-
-    // Add event listeners
-    window.addEventListener("scroll", handleScroll, { passive: true })
-    window.addEventListener("wheel", handleWheel, { passive: true })
-
-    // Cleanup function
     return () => {
-      if (rafId) {
-        cancelAnimationFrame(rafId)
-      }
-      window.removeEventListener("scroll", handleScroll)
-      window.removeEventListener("wheel", handleWheel)
+      cancelAnimationFrame(rafId)
+      window.removeEventListener("resize", setBodyHeight)
+      document.body.style.height = "auto"
     }
   }, [])
 
-  return <div ref={scrollRef}>{children}</div>
+  return (
+    <div
+      ref={containerRef}
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        width: "100%",
+        willChange: "transform",
+      }}
+    >
+      {children}
+    </div>
+  )
 }
 
 export default SmoothScroll
