@@ -14,7 +14,7 @@ const SmoothScroll = ({ children }) => {
     let rafId = null
 
     // Coefficient for smooth scrolling (lower = smoother)
-    const smoothFactor = 0.05
+    const smoothFactor = 0.1
 
     // Function to update scroll position with momentum
     const smoothScroll = () => {
