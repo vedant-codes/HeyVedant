@@ -18,13 +18,10 @@ const AboutPage = () => {
         <div className="question-bubble mb-4 self-start">How did you get into software development?</div>
 
         <div className="speech-bubble">
-          Design has always been part of my life. My dad is a graphic designer, so I grew up surrounded by creativity. I
-          spent a lot of time playing with Photoshop, Dreamweaver, Flash and After Effects as a kid.
-        </div>
+          Technology has fascinated me for as long as I can remember. I was always the one trying to understand how apps work or experimenting with gadgets. That curiosity naturally led me to programming.        </div>
 
         <div className="speech-bubble">
-          I wasn't the best student in school, but I loved art. That passion led me to study multimedia, where I could
-          channel my creativity into something meaningful.
+          I was always a good student in school, but what truly excited me was problem-solving. That curiosity naturally drew me to software development, where I could build things, solve real-world problems, and keep learning every day.
         </div>
 
         <div className="question-bubble mb-4 mt-8 self-start">
