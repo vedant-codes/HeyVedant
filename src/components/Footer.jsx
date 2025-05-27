@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
         <div className="text-center md:text-left mb-6 md:mb-0">
           <div className="text-xl md:text-2xl font-bold mb-2">© 2025</div>
-          <div className="text-gray-400">LAST UPDATED: 23/05/2025</div>
+          <div className="text-gray-400">LAST UPDATED: 27/05/2025</div>
           <div className="text-gray-400">PUNE, IN (GMT+5:30)</div>
           {/* <Link
             to="#"
