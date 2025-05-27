@@ -185,6 +185,35 @@ h3,
   object-fit: cover;
 }
 
+@media (max-width: 768px) {
+  .project-secondary-images {
+    position: relative;
+    top: 0;
+    right: 0;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-mobile-mockup {
+    position: relative;
+    left: 0;
+    top: 0;
+    margin: 1rem auto;
+    transform: none;
+    width: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-mobile-mockup:hover {
+    transform: scale(1.05);
+  }
+}
+
 .speech-bubble {
   background-color: white;
   color: black;
@@ -299,6 +328,31 @@ h3,
   background-color: white;
   color: #f87171;
   border-color: #f87171;
+}
+
+.resume-button {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  border: none;
+  border-radius: 9999px;
+  padding: 0.5rem 1.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  font-size: clamp(0.7rem, 1.5vw, 0.9rem);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.resume-button:hover {
+  background: white;
+  color: #10b981;
+  border: 2px solid #10b981;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
 }
 
 .hero-button {
@@ -832,3 +886,4 @@ h3,
 .form-submit:active {
   transform: translateY(0);
 }
+
