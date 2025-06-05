@@ -1,74 +1,62 @@
-<<<<<<< HEAD
-# Getting Started with Create React App
+# 👋 Hey, I'm Vedant Shinde
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+🎓 2nd Year Computer Science Undergraduate at [COEP Technological University](https://www.coeptech.ac.in/)  
+📍 Pune, India  
+📬 vedantshinde.vs12@gmail.com | 📞 8482895284  
+🔗 [LinkedIn](https://linkedin.com/in/vedant-shinde-806947294)
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 💻 About Me
 
-### `npm start`
+I’m a curious and driven Computer Science student who’s passionate about solving real-world problems through efficient, scalable software. I’ve always been a good student, but what really excites me is **problem-solving** and **building things from scratch**.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Whether it’s optimizing a graph algorithm, designing a GUI, or deploying a full-stack app—I love the entire process of turning an idea into a working product.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 🚀 Projects
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 🔹 [SQuerreL](https://s-querrel-j6ki.vercel.app/)
+**Tech Stack:** React.js, Python, Express.js  
+Natural language SQL query generator – create, optimize, and execute SQL queries by simply describing what you want in plain English.
 
-### `npm run build`
+### 🔹 [Enroute Transit Navigator](https://github.com/vedant-codes/Enroute-Transit_Navigator)
+**Tech Stack:** C, GTK+ 3.0  
+Built a transit planner using graphs and Dijkstra’s algorithm to find optimal metro/bus routes in Delhi. Includes autocomplete via Trie and real-time data parsing from DMRC CSVs.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 🔹 [Plynion](https://github.com/vedant-codes/Plynion)
+**Tech Stack:** React.js, Firebase, Tailwind CSS, Express.js, Gemini AI  
+A live polling platform with rich media support, interactive charts, and real-time updates. Built for speed, scale, and user engagement.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🛠️ Skills
 
-### `npm run eject`
+- **Languages:** C, Python, JavaScript  
+- **Frontend:** React.js, Tailwind CSS  
+- **Backend:** Express.js, Firebase  
+- **Tools:** Git, GTK+ 3.0  
+- **Core CS:** Data Structures, Algorithms, System Design
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 👨‍💼 Experience
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**Technical Coordinator**  
+*MindSpark, COEP*  
+- Managed technical teams and projects with timely execution.  
+- Coordinated resources and helped deliver large-scale student-led events.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## 📄 Resume
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+📎 [View Resume (PDF)](./Vedant-Shinde-Resume.pdf) — *(Add your resume file to the repo to make this link work)*
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## 📢 Let's Connect
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+I’m always open to collaborations, internships, or just a good tech chat!
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-=======
-# HeyVedant
->>>>>>> 608eea8b5da26a8ae61940723ec4e3653c5ef7ad
