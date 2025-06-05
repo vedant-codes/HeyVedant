@@ -56,20 +56,29 @@ const ProjectCard = ({
             <h3 className="text-3xl font-bold uppercase">{title}</h3>
           </div>
 
-          {clientMessage && (
-            <div className="speech-bubble mb-4">
-              <p>{clientMessage}</p>
-            </div>
-          )}
+         {/* Messages with proper left-right alignment */}
+<div className="flex flex-col gap-4 mb-6">
+  {/* Client Message - Left Aligned */}
+  {clientMessage && (
+    <div className="text-left">
+      <div className="question-bubble inline-block bg-gray-800 text-white px-4 py-2 rounded-xl rounded-bl-none shadow">
+        {clientMessage}
+      </div>
+    </div>
+  )}
 
-          {replyMessage && (
-            <div className="text-right mb-6">
-              <div className="question-bubble">{replyMessage}</div>
-            </div>
-          )}
+  {/* Reply Message - Right Aligned */}
+  {replyMessage && (
+    <div className="text-right">
+      <div className="speech-bubble inline-block bg-purple-600 text-white px-4 py-2 rounded-xl rounded-br-none shadow">
+        {replyMessage}
+      </div>
+    </div>
+  )}
+</div>
+
 
           <div className="flex gap-4 mt-8">
-            {/* <div className="bg-white text-black rounded-full px-4 py-2 text-sm font-medium">Like what you see?</div> */}
             <Link to={`/projects/${id}`} className="bg-white text-black rounded-full px-4 py-2 text-sm font-medium">
               Like what you see?
             </Link>
@@ -145,14 +154,14 @@ const ProjectCard = ({
             </div>
           )}
 
-          {/* Mobile Mockup (for mobile/app projects) */}
-          {id.includes("mobile") || id.includes("app") ? (
+          {/* Mobile Mockup */}
+          {(id.includes("mobile") || id.includes("app")) && (
             <div className="project-mobile-mockup">
               <div className="project-mobile-screen">
                 <img src={imageUrl || "/placeholder.svg?height=400&width=200"} alt={`${title} - Mobile`} />
               </div>
             </div>
-          ) : null}
+          )}
         </div>
       </div>
     </div>

@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react"
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom"
 import { CSSTransition, TransitionGroup } from "react-transition-group"
+import { Toaster } from "react-hot-toast"
+
 import LoadingScreen from "./components/LoadingScreen"
 import Navbar from "./components/Navbar"
 import Footer from "./components/Footer"
@@ -19,11 +21,7 @@ const PageTransition = ({ children }) => {
   const location = useLocation()
 
   useEffect(() => {
-    // Scroll to top when navigating to a new page
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    })
+    window.scrollTo({ top: 0, behavior: "smooth" })
   }, [location.pathname])
 
   return (
@@ -93,6 +91,9 @@ function App() {
           </main>
           <Footer />
           <ScrollToTop />
+
+          {/* 👇 Add the Toaster here */}
+          <Toaster position="top-right" reverseOrder={false} />
         </div>
       </SmoothScroll>
     </Router>

@@ -5,17 +5,16 @@ const ProjectsPage = () => {
     {
       id: "SQL",
       title: "SQuerreL",
-      tags: ["react", "Ai/ml"],
+      tags: ["react", "AI/ML"],
       clientMessage:
         "Hey! We struggle with writing queries—your tool could save us tons of time!",
-      replyMessage: "Say no more! Let’s turn plain English into powerful SQL!",
+      replyMessage: "Say no more! Let's turn plain English into powerful SQL!",
       imageUrl: "/SQL2.png",
       additionalImages: [
-        
-              "/SQL2.png",
-              "/SQL3.png",
-              "/SQL.png"
-            ],
+        "/SQL2.png",
+        "/SQL3.png",
+        "/SQL.png"
+      ],
       githubUrl: "https://github.com/vedant/oh-ja-cafe",
       websiteUrl: "https://oh-ja-cafe.com",
     },
@@ -24,14 +23,14 @@ const ProjectsPage = () => {
       title: "BOOK4COEP",
       tags: ["WEB DEVELOPMENT", "DESIGN"],
       clientMessage:
-        "Hey! We’re two librarians—your tool could really streamline our library!",
-      replyMessage: "I’m in! Let’s make managing books a breeze!",
+        "Hey! We're two librarians—your tool could really streamline our library!",
+      replyMessage: "I'm in! Let's make managing books a breeze!",
       imageUrl: "/b4c1.png",
-            additionalImages: [
-              "/b4c.png",
-              "/b4c3.png",
-              "/b4c1.png"
-            ],
+      additionalImages: [
+        "/b4c.png",
+        "/b4c3.png",
+        "/b4c1.png"
+      ],
       githubUrl: "https://github.com/vedant/oh-ja-cafe",
       websiteUrl: "https://oh-ja-cafe.com",
     },
@@ -50,6 +49,8 @@ const ProjectsPage = () => {
       githubUrl: "https://github.com/vedant/omada-mobile",
       websiteUrl: "https://omada-app.com",
     },
+    // Add more projects as needed
+  
     // {
     //   id: "project-4",
     //   title: "PROJECT 4",

@@ -16,9 +16,8 @@ const Navbar = () => {
   }
 
   const handleResumeDownload = () => {
-    // Create a temporary link element to trigger download
     const link = document.createElement("a")
-    link.href = "/Vedant-Shinde-Resume.pdf" // You'll need to add your resume PDF to the public folder
+    link.href = "/Vedant-Shinde-Resume.pdf" 
     link.download = "Vedant_Resume.pdf"
     document.body.appendChild(link)
     link.click()
