@@ -87,8 +87,8 @@ const AboutPage = () => {
           </p>
           <p className="mb-2">
             Intern at{" "}
-            <a href="https://www.sensetechnologysolutions.com/" target="_blank" rel="noopener noreferrer" className="text-orange-400 underline">
-              Sense Tech Solutions
+            <a href="https://www.adiasquare.com/" target="_blank" rel="noopener noreferrer" className="text-orange-400 underline">
+              Adiasquare Software Solutions
             </a>
           </p>
           <p className="mb-2">Freelance Developer</p>

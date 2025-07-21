@@ -4,6 +4,7 @@ import { useRef } from "react"
 import { Link } from "react-router-dom"
 import ScrollArrow from "../components/ScrollArrow"
 import ProjectCard from "../components/ProjectCard"
+import TechStack from "../components/TechStack"
 
 const HomePage = () => {
   const projectsRef = useRef(null)
@@ -51,6 +52,26 @@ const HomePage = () => {
         <h2 className="section-heading">SELECTED PROJECTS</h2>
 
         <div className="max-w-7xl mx-auto">
+
+          <ProjectCard
+            id="LegalMind"
+            title="LegalMindAI"
+            tags={["WEB DEVELOPMENT", "AI/ML", "NLP"]}
+            clientMessage="Hey! We’re two librarians—your tool could really streamline our library!"
+            replyMessage="I’m in! Let’s make managing books a breeze!"
+            imageUrl="/lm1.png"
+            additionalImages={[
+              "/lm2.png",
+              "/lm3.png",
+              "/lm4.png",
+              "/lm5.png",
+              "/lm6.png"
+            ]}
+            githubUrl="https://github.com/vedant-codes/LegalMindAi"
+            websiteUrl="https://legal-mind-ai-alpha.vercel.app/"
+            reverse={false}
+          />
+
           <ProjectCard
             id="SQL"
             title="SQuerreL"
@@ -68,22 +89,6 @@ const HomePage = () => {
             reverse={false}
           />
 
-          <ProjectCard
-            id="Library"
-            title="BOOK4COEP"
-            tags={["WEB DEVELOPMENT", "DESIGN"]}
-            clientMessage="Hey! We’re two librarians—your tool could really streamline our library!"
-            replyMessage="I’m in! Let’s make managing books a breeze!"
-            imageUrl="/b4c1.png"
-            additionalImages={[
-              "/b4c.png",
-              "/b4c3.png",
-              "/b4c1.png"
-            ]}
-            githubUrl="https://github.com/vedant/oh-ja-cafe"
-            websiteUrl="https://oh-ja-cafe.com"
-            reverse={false}
-          />
         </div>
 
         <div className="flex justify-center mt-6 md:mt-10">
@@ -107,6 +112,8 @@ const HomePage = () => {
           </Link>
         </div>
       </section>
+
+      <TechStack />
 
       {/* About Section */}
       <section className="about-section">

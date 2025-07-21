@@ -15,8 +15,26 @@ const ProjectsPage = () => {
         "/SQL3.png",
         "/SQL.png"
       ],
-      githubUrl: "https://github.com/vedant/oh-ja-cafe",
-      websiteUrl: "https://oh-ja-cafe.com",
+      githubUrl: "https://github.com/shevkar-shubhra/SQuerreL/",
+      websiteUrl: "https://s-querrel-j6ki.vercel.app/",
+    },
+    {
+      id: "LegalMind",
+      title: "LegalMindAI",
+      tags: ["WEB DEVELOPMENT", "AI/ML", "NLP"],
+      clientMessage: "We deal with tons of complex legal contracts—can you help us simplify and analyze them faster?",
+      replyMessage: "Yes! Let’s build an AI-powered tool to summarize and extract risks from contracts efficiently.",
+      imageUrl: "/lm1.png",
+      additionalImages: [
+        "/lm2.png",
+        "/lm3.png",
+        "/lm4.png",
+        "/lm5.png",
+        "/lm6.png"
+      ],
+      githubUrl: "https://github.com/vedant-codes/LegalMindAi",
+      websiteUrl: "https://legal-mind-ai-alpha.vercel.app/",
+      reverse: false
     },
     {
       id: "B4C",
@@ -31,24 +49,29 @@ const ProjectsPage = () => {
         "/b4c3.png",
         "/b4c1.png"
       ],
-      githubUrl: "https://github.com/vedant/oh-ja-cafe",
-      websiteUrl: "https://oh-ja-cafe.com",
+      githubUrl: "https://github.com/vedant-codes/BOOK4COEP",
+      websiteUrl: "https://book-4-coep.vercel.app/",
     },
-    {
-      id: "Plynion-mobile-app",
-      title: "Plynion MOBILE",
-      tags: ["MOBILE", "APP", "REACT"],
-      clientMessage: "We're building a premium club with exclusive features to boost engagement and monetization.",
-      replyMessage: "Let's make them feel like VIPs!",
-      imageUrl: "/placeholder.svg?height=600&width=300",
+
+     {
+      id: "EnRoute",
+      title: "EnRoute: Transit Navigator",
+      tags: ["DSA", "GRAPHS", "SHORTEST PATH", "REACT"],
+      clientMessage:
+        "We're looking to optimize metro and bus routes across the city—can your app help?",
+      replyMessage:
+        "Absolutely! Let’s minimize interchanges and give users the fastest path possible.",
+      imageUrl: "/enroute1.png",
       additionalImages: [
-        "/placeholder.svg?height=600&width=300",
-        "/placeholder.svg?height=600&width=300",
-        "/placeholder.svg?height=600&width=300",
+        "/enroute1.png",
+        "/enroute2.png",
+        "/enroute3.png"
       ],
-      githubUrl: "https://github.com/vedant/omada-mobile",
-      websiteUrl: "https://omada-app.com",
+      githubUrl: "https://github.com/vedant-codes/Enroute-Transit_Navigator",
+      reverse: false
     },
+    
+  
     // Add more projects as needed
   
     // {

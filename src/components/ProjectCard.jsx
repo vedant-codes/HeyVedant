@@ -82,9 +82,12 @@ const ProjectCard = ({
             <Link to={`/projects/${id}`} className="bg-white text-black rounded-full px-4 py-2 text-sm font-medium">
               Like what you see?
             </Link>
-            <Link to={"/contacts"} className="bg-white text-black rounded-full px-4 py-2 text-sm font-medium">
-              Let's chat!
-            </Link>
+             <Link
+    to="/contact"
+    className="bg-emerald-500 hover:bg-white text-white rounded-full px-4 py-2 text-sm font-medium transition"
+  >
+    Let's Chat
+  </Link>
           </div>
         </div>
 

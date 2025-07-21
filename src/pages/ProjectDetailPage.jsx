@@ -5,29 +5,51 @@ import { Link, useParams } from "react-router-dom"
 const ProjectDetailPage = () => {
   const { id } = useParams()
 
-  // In a real application, you would fetch project data based on the ID
-  // For this demo, we'll use hardcoded data
   const projects = {
-    lattice: {
-      title: "LATTICE",
-      tags: ["EDITORIAL", "ILLUSTRATION"],
-      clientMessage: "Do you want to explore some styles with our articles and ebook?",
-      replyMessage: "Where do I sign?",
-      imageUrl: "/placeholder.svg?height=450&width=800",
-      content:
-        "This project involved creating a series of illustrations for Lattice's ebook and article series. The goal was to establish a consistent visual language that would complement their brand identity while adding a unique touch to their content.",
+    SQL: {
+      title: "SQuerreL",
+      tags: ["REACT", "AI/ML"],
+      clientMessage: "Hey! We struggle with writing queries—your tool could save us tons of time!",
+      replyMessage: "Say no more! Let's turn plain English into powerful SQL!",
+      imageUrl: "/SQL2.png",
+      additionalImages: ["/SQL2.png", "/SQL3.png", "/SQL.png"],
+      githubUrl: "https://github.com/vedant/oh-ja-cafe",
+      websiteUrl: "https://oh-ja-cafe.com",
+      content: `SQuerreL is an intelligent SQL generator that allows users to write natural language queries and get SQL statements instantly. Built using React and OpenAI's API, it simplifies database access for analysts and non-developers, removing the need to learn SQL syntax. The tool handles query generation, optimization, and supports multiple SQL dialects.`
     },
-    "oh-ja-cafe": {
-      title: "OH, JA! CAFÉ",
-      tags: ["BRAND", "ILLUSTRATION"],
-      clientMessage:
-        "Hey! We're two designers opening a small cafe and love your illustrations. They'd fit perfectly with our vibe!",
-      replyMessage: "I'm in—let's make your cafe shine!",
-      imageUrl: "/placeholder.svg?height=450&width=800",
-      additionalImages: ["/placeholder.svg?height=450&width=800"],
-      content:
-        "Oh, Ja! Cafe approached me to create a vibrant and playful brand identity for their new cafe. The project included logo design, menu layouts, and a series of illustrations that would be used across their physical space and digital presence.",
+    B4C: {
+      title: "BOOK4COEP",
+      tags: ["WEB DEVELOPMENT", "DESIGN"],
+      clientMessage: "Hey! We're two librarians—your tool could really streamline our library!",
+      replyMessage: "I'm in! Let's make managing books a breeze!",
+      imageUrl: "/b4c1.png",
+      additionalImages: ["/b4c.png", "/b4c3.png", "/b4c1.png"],
+      githubUrl: "https://github.com/vedant/oh-ja-cafe",
+      websiteUrl: "https://oh-ja-cafe.com",
+      content: `BOOK4COEP is a digital platform created for COEP’s library to digitize the book borrowing and reservation system. Users can browse book availability in real time, request holds, and track overdue returns. Built with a focus on clean UI and librarian-focused workflows, it enhances efficiency and accessibility in a campus library environment.`
     },
+    LegalMind: {
+      title: "LegalMindAI",
+      tags: ["WEB DEVELOPMENT", "AI/ML", "NLP"],
+      clientMessage: "We deal with tons of complex legal contracts—can you help us simplify and analyze them faster?",
+      replyMessage: "Yes! Let’s build an AI-powered tool to summarize and extract risks from contracts efficiently.",
+      imageUrl: "/lm1.png",
+      additionalImages: ["/lm2.png", "/lm3.png", "/lm4.png", "/lm5.png", "/lm6.png"],
+      githubUrl: "https://github.com/vedant-codes/LegalMindAi",
+      websiteUrl: "https://legal-mind-ai-alpha.vercel.app/",
+      content: `LegalMindAI leverages AI and NLP to automatically summarize legal contracts, extract clauses, and highlight risk factors. Built using OpenAI's LLMs, the platform offers a structured view of unstructured documents, enabling startups and legal professionals to review contracts efficiently. It includes multi-page upload support, clause comparison, and legal glossary integration.`
+    },
+    EnRoute: {
+      title: "EnRoute: Transit Navigator",
+      tags: ["DSA", "GRAPHS", "SHORTEST PATH", "REACT"],
+      clientMessage: "We're looking to optimize metro and bus routes across the city—can your app help?",
+      replyMessage: "Absolutely! Let’s minimize interchanges and give users the fastest path possible.",
+      imageUrl: "/enroute1.png",
+      additionalImages: ["/enroute1.png", "/enroute2.png", "/enroute3.png"],
+      githubUrl: "https://github.com/vedant-codes/enroute-transit-navigator",
+      websiteUrl: "https://enroute-navigator.vercel.app/",
+      content: `EnRoute is a graph-based transit navigation system designed for cities like Delhi. It uses Dijkstra’s algorithm to compute the shortest and most efficient metro or bus routes, while minimizing interchanges. With real-time filtering, intuitive UI, and dynamic map-based suggestions, it helps users reach destinations faster in urban public transport networks.`
+    }
   }
 
   const project = projects[id]
@@ -38,18 +60,9 @@ const ProjectDetailPage = () => {
         <h1 className="text-2xl md:text-4xl font-bold mb-4 md:mb-6">Project Not Found</h1>
         <p className="mb-6 md:mb-8">The project you're looking for doesn't exist or has been removed.</p>
         <Link to="/projects" className="button-primary text-sm md:text-base">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="mr-2"
-          >
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+            className="mr-2">
             <line x1="19" y1="12" x2="5" y2="12"></line>
             <polyline points="12 19 5 12 12 5"></polyline>
           </svg>
@@ -65,18 +78,9 @@ const ProjectDetailPage = () => {
         to="/projects"
         className="inline-flex items-center text-gray-400 hover:text-white mb-4 md:mb-8 text-sm md:text-base"
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="mr-2"
-        >
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+          className="mr-2">
           <line x1="19" y1="12" x2="5" y2="12"></line>
           <polyline points="12 19 5 12 12 5"></polyline>
         </svg>
@@ -117,10 +121,10 @@ const ProjectDetailPage = () => {
               className="rounded-xl w-full h-full object-cover"
             />
           </div>
-          {project.additionalImages && project.additionalImages.length > 0 && (
+          {project.additionalImages?.[0] && (
             <div className="bg-purple-300 rounded-xl aspect-video flex items-center justify-center">
               <img
-                src={project.additionalImages[0] || "/placeholder.svg"}
+                src={project.additionalImages[0]}
                 alt={`${project.title} additional`}
                 className="rounded-xl w-full h-full object-cover"
               />
@@ -130,37 +134,29 @@ const ProjectDetailPage = () => {
 
         <div className="prose prose-lg prose-invert max-w-none text-sm md:text-base">
           <p>{project.content}</p>
-
-          <p className="mt-4 md:mt-6">
-            This is a placeholder for more detailed project content. In a real portfolio, this section would include:
-          </p>
-
-          <ul>
-            <li>Project background and objectives</li>
-            <li>Design process and challenges</li>
-            <li>Solutions and implementation details</li>
-            <li>Results and impact</li>
-            <li>Client testimonials</li>
-          </ul>
-
-          <p className="mt-4 md:mt-6">
-            Additional images, mockups, and interactive elements would also be included to showcase the project in
-            detail.
-          </p>
         </div>
 
-        <div className="flex justify-center mt-6 md:mt-8">
-          <div className="flex flex-wrap gap-2 md:gap-4 justify-center">
-            <div className="bg-white text-black rounded-full px-3 md:px-4 py-1 md:py-2 text-xs md:text-sm">
-              Like what you see?
-            </div>
-            <Link
-              to="/contact"
-              className="bg-white text-black rounded-full px-3 md:px-4 py-1 md:py-2 text-xs md:text-sm"
+        <div className="flex justify-center gap-4 mt-8">
+          {project.githubUrl && (
+            <a
+              href={project.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white text-black rounded-full px-4 py-2 text-sm font-semibold hover:scale-105 transition"
             >
-              Let's chat!
-            </Link>
-          </div>
+              GitHub
+            </a>
+          )}
+          {project.websiteUrl && (
+            <a
+              href={project.websiteUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white text-black rounded-full px-4 py-2 text-sm font-semibold hover:scale-105 transition"
+            >
+              Visit Website
+            </a>
+          )}
         </div>
       </div>
     </div>
