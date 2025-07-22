@@ -13,21 +13,21 @@ const ProjectDetailPage = () => {
       replyMessage: "Say no more! Let's turn plain English into powerful SQL!",
       imageUrl: "/SQL2.png",
       additionalImages: ["/SQL2.png", "/SQL3.png", "/SQL.png"],
-      githubUrl: "https://github.com/vedant/oh-ja-cafe",
-      websiteUrl: "https://oh-ja-cafe.com",
+      githubUrl: "https://github.com/shevkar-shubhra/SQuerreL/",
+      websiteUrl: "https://s-querrel-j6ki.vercel.app/",
       content: `SQuerreL is an intelligent SQL generator that allows users to write natural language queries and get SQL statements instantly. Built using React and OpenAI's API, it simplifies database access for analysts and non-developers, removing the need to learn SQL syntax. The tool handles query generation, optimization, and supports multiple SQL dialects.`
     },
-    B4C: {
-      title: "BOOK4COEP",
-      tags: ["WEB DEVELOPMENT", "DESIGN"],
-      clientMessage: "Hey! We're two librarians—your tool could really streamline our library!",
-      replyMessage: "I'm in! Let's make managing books a breeze!",
-      imageUrl: "/b4c1.png",
-      additionalImages: ["/b4c.png", "/b4c3.png", "/b4c1.png"],
-      githubUrl: "https://github.com/vedant/oh-ja-cafe",
-      websiteUrl: "https://oh-ja-cafe.com",
-      content: `BOOK4COEP is a digital platform created for COEP’s library to digitize the book borrowing and reservation system. Users can browse book availability in real time, request holds, and track overdue returns. Built with a focus on clean UI and librarian-focused workflows, it enhances efficiency and accessibility in a campus library environment.`
-    },
+    // B4C: {
+    //   title: "BOOK4COEP",
+    //   tags: ["WEB DEVELOPMENT", "DESIGN"],
+    //   clientMessage: "Hey! We're two librarians—your tool could really streamline our library!",
+    //   replyMessage: "I'm in! Let's make managing books a breeze!",
+    //   imageUrl: "/b4c1.png",
+    //   additionalImages: ["/b4c.png", "/b4c3.png", "/b4c1.png"],
+    //   githubUrl: "https://github.com/vedant/oh-ja-cafe",
+    //   websiteUrl: "https://oh-ja-cafe.com",
+    //   content: `BOOK4COEP is a digital platform created for COEP’s library to digitize the book borrowing and reservation system. Users can browse book availability in real time, request holds, and track overdue returns. Built with a focus on clean UI and librarian-focused workflows, it enhances efficiency and accessibility in a campus library environment.`
+    // },
     LegalMind: {
       title: "LegalMindAI",
       tags: ["WEB DEVELOPMENT", "AI/ML", "NLP"],
@@ -41,13 +41,12 @@ const ProjectDetailPage = () => {
     },
     EnRoute: {
       title: "EnRoute: Transit Navigator",
-      tags: ["DSA", "GRAPHS", "SHORTEST PATH", "REACT"],
+      tags: ["C", "DSA", "GTK 3.0"],
       clientMessage: "We're looking to optimize metro and bus routes across the city—can your app help?",
       replyMessage: "Absolutely! Let’s minimize interchanges and give users the fastest path possible.",
       imageUrl: "/enroute1.png",
       additionalImages: ["/enroute1.png", "/enroute2.png", "/enroute3.png"],
-      githubUrl: "https://github.com/vedant-codes/enroute-transit-navigator",
-      websiteUrl: "https://enroute-navigator.vercel.app/",
+      githubUrl: "https://github.com/vedant-codes/Enroute-Transit_Navigator",
       content: `EnRoute is a graph-based transit navigation system designed for cities like Delhi. It uses Dijkstra’s algorithm to compute the shortest and most efficient metro or bus routes, while minimizing interchanges. With real-time filtering, intuitive UI, and dynamic map-based suggestions, it helps users reach destinations faster in urban public transport networks.`
     }
   }

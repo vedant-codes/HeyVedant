@@ -36,22 +36,22 @@ const ProjectsPage = () => {
       websiteUrl: "https://legal-mind-ai-alpha.vercel.app/",
       reverse: false
     },
-    {
-      id: "B4C",
-      title: "BOOK4COEP",
-      tags: ["WEB DEVELOPMENT", "DESIGN"],
-      clientMessage:
-        "Hey! We're two librarians—your tool could really streamline our library!",
-      replyMessage: "I'm in! Let's make managing books a breeze!",
-      imageUrl: "/b4c1.png",
-      additionalImages: [
-        "/b4c.png",
-        "/b4c3.png",
-        "/b4c1.png"
-      ],
-      githubUrl: "https://github.com/vedant-codes/BOOK4COEP",
-      websiteUrl: "https://book-4-coep.vercel.app/",
-    },
+    // {
+    //   id: "B4C",
+    //   title: "BOOK4COEP",
+    //   tags: ["WEB DEVELOPMENT", "DESIGN"],
+    //   clientMessage:
+    //     "Hey! We're two librarians—your tool could really streamline our library!",
+    //   replyMessage: "I'm in! Let's make managing books a breeze!",
+    //   imageUrl: "/b4c1.png",
+    //   additionalImages: [
+    //     "/b4c.png",
+    //     "/b4c3.png",
+    //     "/b4c1.png"
+    //   ],
+    //   githubUrl: "https://github.com/vedant-codes/BOOK4COEP",
+    //   websiteUrl: "https://book-4-coep.vercel.app/",
+    // },
 
      {
       id: "EnRoute",
