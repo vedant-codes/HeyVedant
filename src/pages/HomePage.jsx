@@ -4,6 +4,7 @@ import { useRef } from "react"
 import { Link } from "react-router-dom"
 import ScrollArrow from "../components/ScrollArrow"
 import ProjectCard from "../components/ProjectCard"
+import { projects } from "../data/projects"
 import TechStack from "../components/TechStack"
 
 const HomePage = () => {
@@ -52,64 +53,9 @@ const HomePage = () => {
         <h2 className="section-heading">SELECTED PROJECTS</h2>
 
         <div className="max-w-7xl mx-auto">
-
-          <ProjectCard
-            id="LegalMind"
-            title="LegalMindAI"
-            tags={["WEB DEVELOPMENT", "AI/ML", "NLP"]}
-            clientMessage="Hey! We’re two librarians—your tool could really streamline our library!"
-            replyMessage="I’m in! Let’s make managing books a breeze!"
-            imageUrl="/lm1.png"
-            additionalImages={[
-              "/lm2.png",
-              "/lm3.png",
-              "/lm4.png",
-              "/lm5.png",
-              "/lm6.png"
-            ]}
-            githubUrl="https://github.com/vedant-codes/LegalMindAi"
-            websiteUrl="https://legal-mind-ai-alpha.vercel.app/"
-            reverse={false}
-          />
-
-          <ProjectCard
-            id="SQL"
-            title="SQuerreL"
-            tags={["react", "AI/ML"]}
-            clientMessage="Hey! We struggle with writing queries—your tool could save us tons of time!"
-            replyMessage="Say no more! Let’s turn plain English into powerful SQL!"
-            imageUrl="/SQL.png"
-            additionalImages={[
-              "/SQL2.png",
-              "/SQL3.png",
-              "/SQL.png"
-            ]}
-            githubUrl="https://github.com/vedant/oh-ja-cafe"
-            websiteUrl="https://oh-ja-cafe.com"
-            reverse={false}
-          />
-
-        </div>
-
-        <div className="flex justify-center mt-6 md:mt-10">
-          <Link to="/projects" className="button-primary text-sm md:text-base">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="mr-2"
-            >
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-            SEE MORE PROJECTS
-          </Link>
+          {projects.map((project, index) => (
+            <ProjectCard key={project.id} {...project} reverse={false} />
+          ))}
         </div>
       </section>
 

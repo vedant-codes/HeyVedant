@@ -1,6 +1,6 @@
 # 👋 Hey, I'm Vedant Shinde
 
-🎓 2nd Year Computer Science Undergraduate at [COEP Technological University](https://www.coeptech.ac.in/)  
+🎓 4th Year Computer Science Undergraduate at [COEP Technological University](https://www.coeptech.ac.in/)  
 📍 Pune, India  
 📬 vedantshinde.vs12@gmail.com | 📞 8482895284  
 🔗 [LinkedIn](https://linkedin.com/in/vedant-shinde-806947294)
@@ -17,27 +17,32 @@ Whether it’s optimizing a graph algorithm, designing a GUI, or deploying a ful
 
 ## 🚀 Projects
 
-### 🔹 [SQuerreL](https://s-querrel-j6ki.vercel.app/)
-**Tech Stack:** React.js, Python, Express.js  
-Natural language SQL query generator – create, optimize, and execute SQL queries by simply describing what you want in plain English.
+### 🔹 [LegalMind AI](https://legal-mind-ai-alpha.vercel.app/)
+**Tech Stack:** React, FastAPI, Hugging Face, Tailwind CSS  
+AI-powered legal document companion – summarizes contracts, flags risky clauses and extracts key entities.
 
-### 🔹 [Enroute Transit Navigator](https://github.com/vedant-codes/Enroute-Transit_Navigator)
-**Tech Stack:** C, GTK+ 3.0  
-Built a transit planner using graphs and Dijkstra’s algorithm to find optimal metro/bus routes in Delhi. Includes autocomplete via Trie and real-time data parsing from DMRC CSVs.
+### 🔹 [Socratic AI](https://socratic-ai-tutor-one.vercel.app)
+**Tech Stack:** Llama 3.1 8B (Unsloth/LoRA), React, FastAPI, Supabase, Ollama  
+A fine-tuned educational chatbot that teaches by asking guiding questions.
 
-### 🔹 [Plynion](https://github.com/vedant-codes/Plynion)
-**Tech Stack:** React.js, Firebase, Tailwind CSS, Express.js, Gemini AI  
-A live polling platform with rich media support, interactive charts, and real-time updates. Built for speed, scale, and user engagement.
+### 🔹 [Syntrix](https://github.com/SahilMalawde-28/Syntrix)
+**Tech Stack:** Python, Docker, Ansible, Vite, Tailwind CSS  
+Full-stack project with a Python automation backend and a Vite + Tailwind frontend.
+
+### 🔹 [ZETROS](https://github.com/vedant-codes/ZETROS-Integrated-Framework)
+**Tech Stack:** Python, scikit-learn, RSA/AES-GCM  
+Zero-trust IoT security framework: PUF-based device auth, ML intrusion detection, blockchain blacklisting.
 
 ---
 
 ## 🛠️ Skills
 
-- **Languages:** C, Python, JavaScript  
-- **Frontend:** React.js, Tailwind CSS  
-- **Backend:** Express.js, Firebase  
-- **Tools:** Git, GTK+ 3.0  
-- **Core CS:** Data Structures, Algorithms, System Design
+- **Languages:** C, C++, Python, JavaScript, Java, SQL, Solidity  
+- **Frontend:** React, Tailwind CSS, Vite  
+- **Backend & Data:** Node.js, Express, FastAPI, Firebase, Supabase, MySQL  
+- **AI / ML:** scikit-learn, Hugging Face, Ollama, Pandas, NumPy  
+- **DevOps & Tools:** Git, GitHub, Linux, Docker, Ansible, SSH, WinRM, Vercel  
+- **Security & Web3:** Ethereum, Solidity, Zero-Trust IoT  
 
 ---
 

@@ -2,6 +2,8 @@
 
 import { useState } from "react"
 import { Link } from "react-router-dom"
+import ProjectVisual from "./ProjectVisual"
+import ZetrosDemo from "./ZetrosDemo"
 
 const ProjectCard = ({
   id,
@@ -14,6 +16,9 @@ const ProjectCard = ({
   githubUrl,
   websiteUrl,
   reverse = false,
+  stack = [],
+  terminal = [],
+  demo,
 }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [isHovering, setIsHovering] = useState(false)
@@ -93,7 +98,10 @@ const ProjectCard = ({
 
         {/* Project Images */}
         <div className="project-images" onMouseEnter={handleImageHover} onMouseLeave={handleImageLeave}>
+          {demo === "zetros" && <ZetrosDemo />}
+          {!demo && allImages.length === 0 && <ProjectVisual title={title} lines={terminal} stack={stack} />}
           {/* Main Image */}
+          {allImages.length > 0 && (
           <div className="project-main-image">
             <img
               src={allImages[currentImageIndex] || "/placeholder.svg?height=400&width=600"}
@@ -105,8 +113,8 @@ const ProjectCard = ({
             {/* Hover Overlay with Links */}
             {isHovering && (
               <div className="project-links">
-                <a
-                  href={githubUrl || "https://github.com"}
+                {githubUrl && <a
+                  href={githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="project-link-icon"
@@ -124,8 +132,8 @@ const ProjectCard = ({
                   >
                     <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
                   </svg>
-                </a>
-                <a href={websiteUrl || "#"} target="_blank" rel="noopener noreferrer" className="project-link-icon">
+                </a>}
+                {websiteUrl && <a href={websiteUrl} target="_blank" rel="noopener noreferrer" className="project-link-icon">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="20"
@@ -141,10 +149,19 @@ const ProjectCard = ({
                     <line x1="2" y1="12" x2="22" y2="12"></line>
                     <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
                   </svg>
-                </a>
+                </a>}
               </div>
             )}
           </div>
+          )}
+
+          {/* Link buttons for cards without screenshots */}
+          {(demo || allImages.length === 0) && (githubUrl || websiteUrl) && (
+            <div className="flex gap-3 mt-4">
+              {githubUrl && <a href={githubUrl} target="_blank" rel="noopener noreferrer" className="project-text-link">GitHub ↗</a>}
+              {websiteUrl && <a href={websiteUrl} target="_blank" rel="noopener noreferrer" className="project-text-link">Live site ↗</a>}
+            </div>
+          )}
 
           {/* Secondary Images */}
           {additionalImages.length > 0 && (
@@ -157,14 +174,6 @@ const ProjectCard = ({
             </div>
           )}
 
-          {/* Mobile Mockup */}
-          {(id.includes("mobile") || id.includes("app")) && (
-            <div className="project-mobile-mockup">
-              <div className="project-mobile-screen">
-                <img src={imageUrl || "/placeholder.svg?height=400&width=200"} alt={`${title} - Mobile`} />
-              </div>
-            </div>
-          )}
         </div>
       </div>
     </div>

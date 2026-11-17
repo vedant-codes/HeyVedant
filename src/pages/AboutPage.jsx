@@ -74,24 +74,17 @@ const AboutPage = () => {
 
         <div className="max-w-3xl mx-auto text-center">
           <p className="mb-2">
-            Sophomore Engineer at{" "}
+            Senior Engineer at{" "}
             <a href="https://www.coeptech.ac.in/" target="_blank" rel="noopener noreferrer" className="text-blue-400 underline">
               COEP
             </a>
           </p>
           <p className="mb-2">
-            Technical Coordinator at{" "}
+            Hackathon Event Head at{" "}
             <a href="https://www.mind-spark.org/" target="_blank" rel="noopener noreferrer" className="text-emerald-400 underline">
               Mindspark
             </a>
           </p>
-          <p className="mb-2">
-            Intern at{" "}
-            <a href="https://www.adiasquare.com/" target="_blank" rel="noopener noreferrer" className="text-orange-400 underline">
-              Adiasquare Software Solutions
-            </a>
-          </p>
-          <p className="mb-2">Freelance Developer</p>
         </div>
 
         <h2 className="section-heading mt-10 md:mt-20">RESOURCES</h2>
